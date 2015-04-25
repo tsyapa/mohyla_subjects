@@ -7,5 +7,6 @@ public class Subject {
 	double credits;
 	int trimester;
 	String description;
+	long department_id;
 	long id;
 }
