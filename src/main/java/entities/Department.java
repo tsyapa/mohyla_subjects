@@ -5,23 +5,23 @@ import com.googlecode.objectify.annotation.Id;
 @Entity
 public class Department {
 	@Id
-	String name;
+	private String name;
+	private String faculty_name;
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public long getFaculty_id() {
-		return faculty_id;
+	public String getFaculty_name() {
+		return faculty_name;
 	}
-	public void setFaculty_id(long faculty_id) {
-		this.faculty_id = faculty_id;
+	public void setFaculty_name(String faculty_name) {
+		this.faculty_name = faculty_name;
 	}
-	long faculty_id;
-	public Department(String name, long faculty_id) {
+	public Department(String name, String faculty_name) {
 		super();
 		this.name = name;
-		this.faculty_id = faculty_id;
+		this.faculty_name = faculty_name;
 	}
 }

@@ -1,17 +1,16 @@
 package entities;
 
+import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
-
-import subjects.DB;
-import subjects.InvalidIndexException;
-import subjects.Utils;
-
+@Entity
 public class Profile {
-	String name;
+	private String name;
 	@Id
-	String login;
-	String passhash;
-	long speciality_id;
+	private String login;
+	private String passhash;
+	private String speciality_name;
+	private String faculty_name;
+	private int year;
 	public String getName() {
 		return name;
 	}
@@ -30,19 +29,31 @@ public class Profile {
 	public void setPasshash(String passhash) {
 		this.passhash = passhash;
 	}
-	public long getSpeciality_id() {
-		return speciality_id;
+	public String getSpeciality_name() {
+		return speciality_name;
 	}
-	public void setSpeciality_id(long speciality_id) {
-		this.speciality_id = speciality_id;
+	public void setSpeciality_name(String speciality_name) {
+		this.speciality_name = speciality_name;
 	}
+	public String getFaculty_name() {
+		return faculty_name;
+	}
+	public void setFaculty_name(String faculty_name) {
+		this.faculty_name = faculty_name;
+	}
+	
 	public Profile(String name, String login, String passhash,
-			long speciality_id) {
+			String speciality_name) {
 		super();
 		this.name = name;
 		this.login = login;
 		this.passhash = passhash;
-		this.speciality_id = speciality_id;
+		this.speciality_name = speciality_name;
 	}
-	
+	public int getYear() {
+		return year;
+	}
+	public void setYear(int year) {
+		this.year = year;
+	}
 }

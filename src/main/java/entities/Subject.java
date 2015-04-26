@@ -1,20 +1,19 @@
 package entities;
 
+import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 
-import subjects.DB;
-import subjects.InvalidIndexException;
-
-
+@Entity
 public class Subject {
-	String name;
-	String lector;
-	double credits;
-	int trimester;
-	String description;
-	long department_id;
+	private String name;
+	private String lector;
+	private double credits;
+	private int trimester;
+	private String description;
+	private String mustknow;
+	private long department_id;
 	@Id
-	Long id;
+	private Long id;
 	public String getName() {
 		return name;
 	}
@@ -67,5 +66,11 @@ public class Subject {
 		this.description = description;
 		this.department_id = department_id;
 		this.id = id;
+	}
+	public String getMustknow() {
+		return mustknow;
+	}
+	public void setMustknow(String mustknow) {
+		this.mustknow = mustknow;
 	}
 }

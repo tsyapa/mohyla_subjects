@@ -1,12 +1,11 @@
 package entities;
 
+import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
-
-import subjects.DB;
-
+@Entity
 public class Faculty {
 	@Id
-	String name;
+	private String name;
 
 	public String getName() {
 		return name;

@@ -12,6 +12,10 @@ public class OfyService {
     static {
         factory().register(Profile.class);
         factory().register(Subject.class);
+        factory().register(Profile.class);
+        factory().register(Subject.class);
+        factory().register(Profile.class);
+        factory().register(Subject.class);
     }
 
     public static Objectify ofy() {

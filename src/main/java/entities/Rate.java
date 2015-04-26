@@ -2,10 +2,12 @@ package entities;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+
 @Entity
-public class Enrolling {
+public class Rate {
 	private long subject_id;
 	private String profile_login;
+	private int rating;
 	@Id
 	private long id;
 	public long getSubject_id() {
@@ -26,10 +28,16 @@ public class Enrolling {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public Enrolling(long subject_id, String profile_login, long id) {
+	public Rate(long subject_id, String profile_login, long id) {
 		super();
 		this.subject_id = subject_id;
 		this.profile_login = profile_login;
 		this.id = id;
+	}
+	public int getRating() {
+		return rating;
+	}
+	public void setRating(int rating) {
+		this.rating = rating;
 	}
 }
