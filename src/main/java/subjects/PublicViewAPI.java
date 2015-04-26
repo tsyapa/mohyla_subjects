@@ -12,6 +12,13 @@ import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.cmd.Query;
 
+import entities.Department;
+import entities.Enrolling;
+import entities.Faculty;
+import entities.Professional;
+import entities.Profile;
+import entities.Speciality;
+import entities.Subject;
 import entities.*;
 //@Api(name = "publicviewapi", version = "v1", scopes = { Constants.EMAIL_SCOPE }, clientIds = {
 //		Constants.WEB_CLIENT_ID, Constants.API_EXPLORER_CLIENT_ID }, description = "Admin Api")
