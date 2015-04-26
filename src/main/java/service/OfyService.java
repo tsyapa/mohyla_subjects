@@ -1,10 +1,11 @@
 package service;
 
-import subjects.Profile;
-import subjects.Subject;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFactory;
 import com.googlecode.objectify.ObjectifyService;
+
+import entities.Profile;
+import entities.Subject;
 
 public class OfyService {
 
