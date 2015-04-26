@@ -5,7 +5,7 @@ public class Profile {
 	String login;
 	String passhash;
 	long speciality_id;
-	long id;
+	Long id;
 	public Profile(DB db, String name, String login,String password,  long speciality_id) throws InvalidIndexException {
 		if (db.specialityMap.containsKey(speciality_id)&&!db.profileMapByLogin.containsKey(login)){
 			this.name=name;

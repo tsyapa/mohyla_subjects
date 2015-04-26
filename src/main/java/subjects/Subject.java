@@ -8,7 +8,7 @@ public class Subject {
 	int trimester;
 	String description;
 	long department_id;
-	long id;
+	Long id;
 	public Subject(DB db, String name, String lector, double credits, int trimester, String description, long department_id) throws InvalidIndexException {
 		if (db.departmentMap.containsKey(department_id)){
 			this.name=name;

@@ -39,4 +39,34 @@ public class DB {
 		}catch(InvalidIndexException e){return false;}
 	}
 
+	public boolean addFaculty(String name){
+		new Faculty(this,name);
+		return true;
+		//завжди повертає істину, бо в нас нема параметра, який може бути некоректним
+	}
+
+	public boolean addProfessional(long subject_id, long speciality_id){
+		try{
+			new Professional(this,subject_id, speciality_id);
+			return true;
+		}catch(InvalidIndexException e){return false;}
+	}
+	public boolean addProfile(String name, String login,String password,  long speciality_id){
+		try{
+			new Profile(this,name, login,password ,speciality_id);
+			return true;
+		}catch(InvalidIndexException e){return false;}
+	}
+	public boolean addSpeciality(String name,  long faculty_id){
+		try{
+			new Speciality(this,name, faculty_id);
+			return true;
+		}catch(InvalidIndexException e){return false;}
+	}
+	public boolean addSubject(String name, String lector, double credits, int trimester, String description, long department_id){
+		try{
+			new Subject(this, name,  lector,  credits,  trimester,  description,  department_id);
+			return true;
+		}catch(InvalidIndexException e){return false;}
+	}
 }

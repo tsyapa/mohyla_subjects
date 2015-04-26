@@ -3,7 +3,7 @@ package subjects;
 public class Professional {
 	long subject_id;
 	long speciality_id;
-	long id;
+	Long id;
 	public Professional(DB db, long subject_id, long speciality_id) throws InvalidIndexException {
 		if (db.subjectMap.containsKey(subject_id)&&db.specialityMap.containsKey(speciality_id)){
 			this.subject_id=subject_id;

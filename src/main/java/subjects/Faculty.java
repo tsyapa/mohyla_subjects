@@ -2,7 +2,7 @@ package subjects;
 
 public class Faculty {
 	String name;
-	long id;
+	Long id;
 	public Faculty(DB db, String name){
 			this.name=name;
 			id = db.generateID();
