@@ -12,13 +12,13 @@ import javax.inject.Named;
 /**
  * Defines v1 of a helloworld API, which provides simple "greeting" methods.
  */
-@Api(
-    name = "helloworld",
-    version = "v1",
-    scopes = {Constants.EMAIL_SCOPE},
-    clientIds = {Constants.WEB_CLIENT_ID, Constants.ANDROID_CLIENT_ID, Constants.IOS_CLIENT_ID},
-    audiences = {Constants.ANDROID_AUDIENCE}
-)
+//@Api(
+//    name = "helloworld",
+//    version = "v1",
+//    scopes = {Constants.EMAIL_SCOPE},
+//    clientIds = {Constants.WEB_CLIENT_ID, Constants.ANDROID_CLIENT_ID, Constants.IOS_CLIENT_ID},
+//    audiences = {Constants.ANDROID_AUDIENCE}
+//)
 public class Greetings {
 
   public static ArrayList<HelloGreeting> greetings = new ArrayList<HelloGreeting>();
