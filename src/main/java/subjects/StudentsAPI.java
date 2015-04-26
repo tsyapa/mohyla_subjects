@@ -1,4 +1,4 @@
-package db_api;
+package subjects;
 
 
 public class StudentsAPI {
