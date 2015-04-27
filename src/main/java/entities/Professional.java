@@ -6,6 +6,7 @@ import com.googlecode.objectify.annotation.Id;
 public class Professional {
 	private long subject_id;
 	private String speciality_name;
+	private boolean value;
 	@Id
 	private Long id;
 	public long getSubject_id() {
@@ -26,11 +27,18 @@ public class Professional {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Professional(long subject_id, String speciality_name, Long id) {
+	public Professional(long subject_id, String speciality_name, boolean value, Long id) {
 		super();
 		this.subject_id = subject_id;
 		this.speciality_name = speciality_name;
 		this.id = id;
+		this.value=value;
+	}
+	public boolean isValue() {
+		return value;
+	}
+	public void setValue(boolean value) {
+		this.value = value;
 	}
 	
 }
