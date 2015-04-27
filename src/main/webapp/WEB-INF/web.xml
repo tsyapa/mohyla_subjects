@@ -4,7 +4,7 @@
         <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
       <init-param>
             <param-name>services</param-name>
-            <param-value>subjects.AdminAPI</param-value>
+            <param-value>subjects.AdminAPI,subjects.PublicViewAPI</param-value>
         </init-param> 
     </servlet>
     <servlet-mapping>

@@ -45,30 +45,30 @@ public class AdminAPI {
 		ofy().delete().key(Key.create(Department.class, name));
 		return new Message("Department removed");
 	}
-	@ApiMethod(name = "addSubject", path = "subject", httpMethod = HttpMethod.POST)
+	@ApiMethod(name = "addSubject", path = "subjectadd", httpMethod = HttpMethod.POST)
 	public Message addSubject(@Named("name")String name,@Named("faculty_name") String faculty_name, @Named("lector")String lector,@Named("credits") double credits, @Named("trimester")int trimester,@Named("description") String description,@Named("department_id") long department_id){
 		Subject f=new Subject(faculty_name, lector, credits, trimester, description, department_id, generateID());
 		ofy().save().entity(f).now();
 		return new Message("Subject created");
 	}
-	@ApiMethod(name = "removeSubject", path = "subject", httpMethod = HttpMethod.POST)
+	@ApiMethod(name = "removeSubject", path = "subjectdel", httpMethod = HttpMethod.POST)
 	public Message removeSubject(@Named("name")long id){
 		ofy().delete().key(Key.create(Subject.class, id));
 		return new Message("Subject removed");
 
 	}
-	@ApiMethod(name = "addSpeciality", path = "speciality", httpMethod = HttpMethod.POST)
-	public Message addSpeciality(@Named("name")String name, @Named("name")String faculty_name){
+	@ApiMethod(name = "addSpeciality", path = "specialityadd", httpMethod = HttpMethod.POST)
+	public Message addSpeciality(@Named("name")String name, @Named("faculty_name")String faculty_name){
 		Speciality f=new Speciality(name, faculty_name);
 		ofy().save().entity(f).now();
 		return new Message("Speciality created");
 	}
-	@ApiMethod(name = "removeSpeciality", path = "speciality", httpMethod = HttpMethod.POST)
+	@ApiMethod(name = "removeSpeciality", path = "specialitydel", httpMethod = HttpMethod.POST)
 	public Message removeSpeciality(@Named("name")String name){
 		ofy().delete().key(Key.create(Speciality.class, name));
 		return new Message("Speciality removed");
 	}
-	@ApiMethod(name = "setProfessional", path = "professional", httpMethod = HttpMethod.POST)
+	@ApiMethod(name = "setProfessional", path = "professionalset", httpMethod = HttpMethod.POST)
 	public Message setProfessional( @Named("speciality_name")String speciality_name ,@Named("subject_id")long subject_id, @Named("value")boolean value){
 		Professional f=new Professional(subject_id, speciality_name, value, generateID());
 		ofy().save().entity(f).now();
