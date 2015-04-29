@@ -4,6 +4,9 @@ import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 @Entity
 public class Professional {
+	public Professional() {
+		// TODO Auto-generated constructor stub
+	}
 	private long subject_id;
 	private String speciality_name;
 	private boolean value;

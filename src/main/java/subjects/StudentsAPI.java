@@ -1,13 +1,15 @@
 package subjects;
 
+import javax.inject.Named;
+
 
 public class StudentsAPI {
-	public boolean enroll(long profile_id, long subject_id, boolean value){
+	public boolean enroll(@Named("token")String token, @Named("token")long profile_id, @Named("token")long subject_id,@Named("token") boolean value){
 		
 		return false;
 		
 	}
-	public boolean rate(long profile_id, long subject_id, int rating){
+	public boolean rate(@Named("token")String token,@Named("token")long profile_id,@Named("token") long subject_id, @Named("token")int rating){
 		
 		return false;
 		

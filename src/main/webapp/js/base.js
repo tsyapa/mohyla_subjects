@@ -280,5 +280,79 @@ function ValidateEmail(uemail)
 		return false;  
 	}  
 }  
+var cur;
+function loadfaculties(){
 
-  
+	gapi.client.setApiKey('');
+	departments = gapi.client.load('publicviewapi', 'v1', function(){
+		gapi.client.publicviewapi.getFaculties().execute(function(resp){
+			for (var i=0;  i<resp.items.length; i++){
+				text+="<p onclick='loadfaculty("+resp.items[i].name+")'>"+resp.items[i].name+"</p>"
+			}
+			document.getElementById('1').innerHTML=text;
+		});
+	}, location.href+'_ah/api');
+}  
+function loadfaculty(name){
+	gapi.client.setApiKey('');
+	departments = gapi.client.load('publicviewapi', 'v1', function(){
+		gapi.client.publicviewapi.getFacultiesByName(name).execute(function(resp){
+
+			document.getElementById('2').innerHTML="<input type='text' value='"+name+"'>";
+		});
+	}, location.href+'_ah/api');
+} 
+function loaddepartments(){
+	gapi.client.setApiKey('');
+	departments = gapi.client.load('publicviewapi', 'v1', function(){
+		gapi.client.publicviewapi.getFacultiesByName(name).execute(function(resp){
+
+			document.getElementById('2').innerHTML="<input type='text' value='"+name+"'>";
+		});
+	}, location.href+'_ah/api');
+}
+function loaddepartment(name){
+	gapi.client.setApiKey('');
+	departments = gapi.client.load('publicviewapi', 'v1', function(){
+		gapi.client.publicviewapi.getFacultiesByName(name).execute(function(resp){
+
+			document.getElementById('2').innerHTML="<input type='text' value='"+name+"'>";
+		});
+	}, location.href+'_ah/api');
+} 
+function loadspecialities(){
+	gapi.client.setApiKey('');
+	departments = gapi.client.load('publicviewapi', 'v1', function(){
+		gapi.client.publicviewapi.getFacultiesByName(name).execute(function(resp){
+
+			document.getElementById('2').innerHTML="<input type='text' value='"+name+"'>";
+		});
+	}, location.href+'_ah/api');
+}
+function loadspeciality(name){
+	gapi.client.setApiKey('');
+	departments = gapi.client.load('publicviewapi', 'v1', function(){
+		gapi.client.publicviewapi.getFacultiesByName(name).execute(function(resp){
+
+			document.getElementById('2').innerHTML="<input type='text' value='"+name+"'>";
+		});
+	}, location.href+'_ah/api');
+}
+function loadsubjects(){
+	gapi.client.setApiKey('');
+	departments = gapi.client.load('publicviewapi', 'v1', function(){
+		gapi.client.publicviewapi.getFacultiesByName(name).execute(function(resp){
+
+			document.getElementById('2').innerHTML="<input type='text' value='"+name+"'>";
+		});
+	}, location.href+'_ah/api');
+}
+function loadsubject(id){
+	gapi.client.setApiKey('');
+	departments = gapi.client.load('publicviewapi', 'v1', function(){
+		gapi.client.publicviewapi.getFacultiesByName(name).execute(function(resp){
+
+			document.getElementById('2').innerHTML="<input type='text' value='"+name+"'>";
+		});
+	}, location.href+'_ah/api');
+}

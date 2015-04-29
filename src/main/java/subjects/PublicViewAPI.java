@@ -15,10 +15,14 @@ import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.cmd.Query;
 
 import entities.*;
-@Api(name = "publicviewapi", version = "v1", scopes = { Constants.EMAIL_SCOPE }, clientIds = {
+@Api(name = "publicviewapi", version = "v1",  clientIds = {
 		Constants.WEB_CLIENT_ID, Constants.API_EXPLORER_CLIENT_ID }, description = "Public Api")
 
 public class PublicViewAPI {
+	@ApiMethod(name = "getFacultiesByName", path = "facultygetbn", httpMethod = HttpMethod.GET)
+	public Faculty getFacultyByName(@Named("faculty_name")String faculty_name){
+		return ofy().load().key(Key.create(Faculty.class,faculty_name)).now();
+	}
 	@ApiMethod(name = "getFaculties", path = "facultyget", httpMethod = HttpMethod.GET)
 	public List<Faculty> getFaculties(){
 		Query <Faculty> query=ofy().load().type(Faculty.class);
@@ -116,6 +120,16 @@ public class PublicViewAPI {
 			list2.add(ofy().load().key(Key.create(Profile.class, enrolling.getProfile_login())).now());
 		}
 		return list2;
+	}
+	@ApiMethod(name = "getProfiles", path = "profileget", httpMethod = HttpMethod.GET)
+	public List<Profile> getAllProfiles(){
+		Query <Profile> query=ofy().load().type(Profile.class);
+		return query.list();
+	}
+	@ApiMethod(name = "getProfileByLogin", path = "profilegetbl", httpMethod = HttpMethod.GET)
+	public Profile getProfileByLogin(@Named("login")String login){
+		return ofy().load().key(Key.create(Profile.class, login)).now();
+	
 	}
 	private static Objectify ofy() {
 		return OfyService.ofy();

@@ -5,6 +5,9 @@ import com.googlecode.objectify.annotation.Id;
 
 @Entity
 public class Subject {
+	public Subject() {
+		// TODO Auto-generated constructor stub
+	}
 	private String name;
 	private String lector;
 	private double credits;

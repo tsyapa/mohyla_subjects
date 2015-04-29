@@ -4,6 +4,9 @@ import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 @Entity
 public class Enrolling {
+	public Enrolling() {
+		// TODO Auto-generated constructor stub
+	}
 	private long subject_id;
 	private String profile_login;
 	@Id

@@ -5,6 +5,9 @@ import com.googlecode.objectify.annotation.Id;
 
 @Entity
 public class Rate {
+	public Rate() {
+		// TODO Auto-generated constructor stub
+	}
 	private long subject_id;
 	private String profile_login;
 	private int rating;
